@@ -55,6 +55,13 @@ function CategoryMenu() {
 						{item.name}
 					</Button>
 				))}
+				<Button
+					onClick={() => {
+						window.location.reload();
+					}}
+				>
+					View All Products
+				</Button>
 			</ButtonGroup>
 		</Box>
 	);

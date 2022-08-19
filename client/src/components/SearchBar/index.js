@@ -26,7 +26,7 @@ function SearchBar({ placeholder, data }) {
 		setKeyWord(searchKeyword);
 
 		setFilteredData(searchKeyword);
-		console.log(productData);
+	
 
 		dispatch({
 			type: UPDATE_PRODUCTS,

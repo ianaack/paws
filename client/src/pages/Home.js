@@ -1,6 +1,6 @@
 import React from "react";
 import ProductList from "../components/ProductList";
-// import CategoryMenu from "../components/CategoryMenu";
+import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import SearchBar from "../components/SearchBar";
 import AddProduct from "../components/AddProduct";
@@ -12,7 +12,7 @@ const Home = () => {
 			<Cart />
 			<SearchBar />
 			<AddProduct />
-			{/* <CategoryMenu /> */}
+			<CategoryMenu />
 			<ProductList />
 		</Container>
 	);

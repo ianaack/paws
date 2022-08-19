@@ -62,7 +62,7 @@ function Login(props) {
 			<Box>
 				<form onSubmit={handleFormSubmit}>
 				  <FormControl>
-					<Box className="flex-row space-between my-2">
+					<Box>
 						<FormLabel htmlFor="email">Email address:</FormLabel>
 						<Input
 							placeholder="youremail@test.com"
@@ -77,7 +77,7 @@ function Login(props) {
 							w="100%"
 						/>
 					</Box>
-					<Box className="flex-row space-between my-2">
+					<Box>
 						<FormLabel htmlFor="pwd">Password:</FormLabel>
 						<Input
 							placeholder="******"
@@ -94,10 +94,10 @@ function Login(props) {
 					</Box>
 					{error ? (
 						<Box>
-							<p className="error-text">The provided credentials are incorrect</p>
+							<p>The provided credentials are incorrect</p>
 						</Box>
 					) : null}
-					<Box className="flex-row flex-end">
+					<Box>
 						<Button
 							type="submit"
 							_hover={{ opacity: "0.8" }}

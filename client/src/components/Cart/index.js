@@ -72,7 +72,7 @@ const Cart = () => {
 
 	if (!state.cartOpen) {
 		return (
-			<Box className="cart-closed">
+			<Box>
 				<Flex onClick={toggleCart} position="fixed">
 					<ShoppingCartIcon fontSize="large" />
 				</Flex>
@@ -81,13 +81,14 @@ const Cart = () => {
 	}
 
 	return (
-		<Box className="cart" margin={"5"}>
+		<Box>
 			<Box
 				display={"flex"}
 				alignItems={"center"}
 				justifyContent={"space-between"}
 			>
-				<Heading as="h1"
+				<Heading
+					as="h1"
 					textAlign={"center"}
 					textDecoration={"underline"}
 					paddingLeft={"10"}

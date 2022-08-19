@@ -5,21 +5,21 @@ import Logo from "../../assets/logo.png";
 
 import {
 	Flex,
-	Breadcrumb,
-	BreadcrumbItem,
 	Image,
 	chakra,
+	ButtonGroup,
+	Button,
 } from "@chakra-ui/react";
 
 function Nav() {
 	function showNavigation() {
 		if (Auth.loggedIn()) {
 			return (
-				<Breadcrumb fontWeight={"medium"} fontSize="x-large">
-					<BreadcrumbItem>
+				<ButtonGroup>
+					<Button fontWeight={"light"} fontSize="m">
 						<Link to="/orders">Order History</Link>
-					</BreadcrumbItem>
-					<BreadcrumbItem>
+					</Button>
+					<Button>
 						<Link
 							to="/"
 							alt={"Logout of your Pet Stuff Plus Account"}
@@ -27,19 +27,19 @@ function Nav() {
 						>
 							Logout
 						</Link>
-					</BreadcrumbItem>
-				</Breadcrumb>
+					</Button>
+				</ButtonGroup>
 			);
 		} else {
 			return (
-				<Breadcrumb fontWeight={"medium"} fontSize="x-large">
-					<BreadcrumbItem>
+				<ButtonGroup fontWeight={"light"} fontSize="m">
+					<Button>
 						<Link to="/login">Login</Link>
-					</BreadcrumbItem>
-					<BreadcrumbItem>
+					</Button>
+					<Button>
 						<Link to="/signup">Sign Up</Link>
-					</BreadcrumbItem>
-				</Breadcrumb>
+					</Button>
+				</ButtonGroup>
 			);
 		}
 	}
