@@ -51,6 +51,7 @@ function CategoryMenu() {
 						onClick={() => {
 							handleClick(item._id);
 						}}
+						colorScheme={"cyan"}
 					>
 						{item.name}
 					</Button>
@@ -59,6 +60,7 @@ function CategoryMenu() {
 					onClick={() => {
 						window.location.reload();
 					}}
+					colorScheme={"teal"}
 				>
 					View All Products
 				</Button>

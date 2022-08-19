@@ -10,10 +10,13 @@ function Nav() {
 		if (Auth.loggedIn()) {
 			return (
 				<ButtonGroup>
-					<Button fontWeight={"light"} fontSize="m">
+					<Button colorScheme="teal">
+						<Link to="/addproduct">Add a Product</Link>
+					</Button>
+					<Button colorScheme="blue">
 						<Link to="/orders">Order History</Link>
 					</Button>
-					<Button>
+					<Button colorScheme="red">
 						<Link
 							to="/"
 							alt={"Logout of your Pet Stuff Plus Account"}
@@ -27,7 +30,7 @@ function Nav() {
 		} else {
 			return (
 				<ButtonGroup fontWeight={"light"} fontSize="m">
-					<Button colorScheme="green">
+					<Button colorScheme="teal">
 						<Link to="/login">Login</Link>
 					</Button>
 					<Button colorScheme="blue">

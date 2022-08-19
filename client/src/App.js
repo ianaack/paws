@@ -16,6 +16,7 @@ import Detail from "./pages/ItemDetail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Signin";
 import Signup from "./pages/Signup";
+import AddProduct from "./pages/AddProduct";
 import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 import Success from "./pages/OrderSuccess";
@@ -56,6 +57,7 @@ function App() {
 								<Route path="/" element={<Home />} />
 								<Route path="/login" element={<Login />} />
 								<Route path="/signup" element={<Signup />} />
+								<Route path="/addproduct" element={<AddProduct />} />
 								<Route path="/success" element={<Success />} />
 								<Route path="/orders" element={<OrderHistory />} />
 								<Route path="/products/:id" element={<Detail />} />

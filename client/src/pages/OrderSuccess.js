@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useMutation } from "@apollo/client";
-import Jumbotron from "../components/Jumbotron";
 import { ADD_ORDER } from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
+import { Box } from "@chakra-ui/react";
 
 function Success() {
 	const [addOrder] = useMutation(ADD_ORDER);
@@ -31,10 +31,10 @@ function Success() {
 
 	return (
 		<div>
-			<Jumbotron>
+			<Box>
 				<h1>Order Placed</h1>
 				<h2>Redirected to the home page</h2>
-			</Jumbotron>
+			</Box>
 		</div>
 	);
 }
