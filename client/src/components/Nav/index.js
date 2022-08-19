@@ -3,13 +3,7 @@ import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 
-import {
-	Flex,
-	Image,
-	chakra,
-	ButtonGroup,
-	Button,
-} from "@chakra-ui/react";
+import { Flex, Image, chakra, ButtonGroup, Button } from "@chakra-ui/react";
 
 function Nav() {
 	function showNavigation() {
@@ -33,10 +27,10 @@ function Nav() {
 		} else {
 			return (
 				<ButtonGroup fontWeight={"light"} fontSize="m">
-					<Button>
+					<Button colorScheme="green">
 						<Link to="/login">Login</Link>
 					</Button>
-					<Button>
+					<Button colorScheme="blue">
 						<Link to="/signup">Sign Up</Link>
 					</Button>
 				</ButtonGroup>
@@ -45,9 +39,16 @@ function Nav() {
 	}
 	return (
 		<chakra.header>
-			<Flex w="100%" px="6" py="5" align={"center"} justify={"flex-start"}>
+			<Flex
+				w="100%"
+				px="6"
+				py="1"
+				align={"center"}
+				justify={"space-between"}
+				background={"gray.300"}
+			>
 				<Link to="/">
-					<Image src={Logo} h="75px" mx={"2"} />
+					<Image src={Logo} h={"100px"} />
 				</Link>
 				{showNavigation()}
 			</Flex>
