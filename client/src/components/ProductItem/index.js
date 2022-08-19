@@ -55,7 +55,7 @@ function ProductItem(item) {
 	};
 
 	return (
-		<Flex flexDirection={"row"} flexWrap="wrap">
+		<Flex flexDirection={"row"} p={2}>
 			<Box bg={"white"} maxWidth={"md"} shadow="md">
 				<Link to={`/products/${_id}`}>
 					<Image

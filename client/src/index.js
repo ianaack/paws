@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
-import customTheme from "./components/extendTheme";
+import customTheme from "./extendTheme";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

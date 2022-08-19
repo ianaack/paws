@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Flex, Image, chakra, ButtonGroup, Button } from "@chakra-ui/react";
+import CategoryMenu from "../CategoryMenu";
 
 function Nav() {
 	function showNavigation() {
 		if (Auth.loggedIn()) {
 			return (
-				<ButtonGroup>
+				<ButtonGroup flexWrap={"wrap"}>
 					<Button colorScheme="teal">
 						<Link to="/addproduct">Add a Product</Link>
 					</Button>
@@ -46,16 +47,17 @@ function Nav() {
 	return (
 		<chakra.header>
 			<Flex
-				w="100%"
-				px="6"
-				py="1"
-				align={"center"}
+				px={6}
+				py={1}
+				alignItems={"center"}
 				justify={"space-between"}
 				background={"gray.300"}
+				flexWrap={"wrap"}
 			>
 				<Link to="/">
 					<Image src={Logo} h={"100px"} />
 				</Link>
+				<CategoryMenu />
 				{showNavigation()}
 			</Flex>
 		</chakra.header>

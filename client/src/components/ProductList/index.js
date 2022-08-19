@@ -9,7 +9,7 @@ import spinner from "../../assets/spinner.gif";
 
 import { idbPromise } from "../../utils/helpers";
 
-import { Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 
 function ProductList() {
 	const [state, dispatch] = useStoreContext();
@@ -57,16 +57,13 @@ function ProductList() {
 			flexDirection={"column"}
 			alignItems={"center"}
 			justifyContent={"space-between"}
+			overflow={"hidden"}
 		>
 			<Heading justifyContent={"center"} m={5}>
 				Available Products:
 			</Heading>
 			{state.products.length ? (
-				<SimpleGrid
-					columns={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-					spacing={"20px"}
-					alignItems={"center"}
-				>
+				<Flex flexWrap={"wrap"}>
 					{filterProducts().map((product) => (
 						<ProductItem
 							key={product._id}
@@ -77,7 +74,7 @@ function ProductList() {
 							quantity={product.quantity}
 						/>
 					))}
-				</SimpleGrid>
+				</Flex>
 			) : (
 				<Text justifyContent={"center"}>
 					You haven't added any products yet!

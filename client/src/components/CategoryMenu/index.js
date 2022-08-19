@@ -7,7 +7,7 @@ import {
 } from "../../utils/actions";
 import { QUERY_CATEGORIES } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
-import { Box, Button, ButtonGroup } from "@chakra-ui/react";
+import { Button, ButtonGroup, Stack } from "@chakra-ui/react";
 
 function CategoryMenu() {
 	const [state, dispatch] = useStoreContext();
@@ -43,29 +43,33 @@ function CategoryMenu() {
 	};
 
 	return (
-		<Box padding={"5"}>
-			<ButtonGroup margin={"2"}>
-				{categories.map((item) => (
+		<Stack direction={["column", "row"]} flexWrap={"wrap"}>
+			{categories.map((item) => (
+				<ButtonGroup>
 					<Button
 						key={item._id}
 						onClick={() => {
 							handleClick(item._id);
 						}}
-						colorScheme={"cyan"}
+						colorScheme={"teal"}
+						size={"lg"}
+						fontSize={"md"}
 					>
 						{item.name}
 					</Button>
-				))}
-				<Button
-					onClick={() => {
-						window.location.reload();
-					}}
-					colorScheme={"teal"}
-				>
-					View All Products
-				</Button>
-			</ButtonGroup>
-		</Box>
+				</ButtonGroup>
+			))}
+			<Button
+				onClick={() => {
+					window.location.reload();
+				}}
+				colorScheme={"teal"}
+				size={"lg"}
+				fontSize={"md"}
+			>
+				View All Products
+			</Button>
+		</Stack>
 	);
 }
 
