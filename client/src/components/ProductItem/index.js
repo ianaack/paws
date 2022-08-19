@@ -4,14 +4,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
-import {
-	Flex,
-	Box,
-	Image,
-	Icon,
-	chakra,
-	Tooltip,
-} from "@chakra-ui/react";
+import { Flex, Box, Image, Icon, chakra, Tooltip, Text } from "@chakra-ui/react";
 
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
@@ -44,44 +37,32 @@ function ProductItem(item) {
 	};
 
 	return (
-		<Flex padding={"5"}>
-			<Box
-				bg={"white"}
-				maxWidth={"md"}
-				borderWidth="1px"
-				rounded="lg"
-				shadow="lg"
-			>
+		<Flex flexDirection={"row"} flexWrap="wrap">
+			<Box bg={"white"} maxWidth={"md"} shadow="md">
 				<Link to={`/products/${_id}`}>
 					<Image
 						alt={`Picture of ${name}`}
 						src={`${image}`}
-						roundedTop="lg"
+						boxSize={"200px"}
 						borderBottom="1px"
 					/>
 				</Link>
-				<Flex m="3" justifyContent="space-around" alignContent="center">
-					<Box
-						fontSize="1.2rem"
-						fontWeight="semibold"
-						as="h4"
-						lineheight="tight"
-					>
+				<Flex m="3" justifyContent={"space-between"} alignContent="center">
+					<Text fontSize="1rem">
 						{name}
 						<br />${price.toFixed(2)}
-					</Box>
+					</Text>
 					<Tooltip
 						label="Add to Cart"
-						bg="white"
+						background={"white"}
 						placement="top"
-						color="gray.800"
+						color="black"
 						fontSize="1.2rem"
 					>
 						<chakra.a display={"flex"}>
 							<Icon
 								as={AddShoppingCartIcon}
-								h={9}
-								w={9}
+								h={6}
 								alignSelf={"center"}
 								onClick={addToCart}
 							/>

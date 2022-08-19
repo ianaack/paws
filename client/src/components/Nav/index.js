@@ -2,7 +2,7 @@ import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
-
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Flex, Image, chakra, ButtonGroup, Button } from "@chakra-ui/react";
 
 function Nav() {
@@ -15,6 +15,9 @@ function Nav() {
 					</Button>
 					<Button colorScheme="blue">
 						<Link to="/orders">Order History</Link>
+					</Button>
+					<Button colorScheme="cyan" rightIcon={<ShoppingCartIcon />}>
+						<Link to="/cart">View Your Cart</Link>
 					</Button>
 					<Button colorScheme="red">
 						<Link
