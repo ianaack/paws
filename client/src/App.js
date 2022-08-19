@@ -8,9 +8,6 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-
 import Home from "./pages/Home";
 import Detail from "./pages/ItemDetail";
 import NoMatch from "./pages/NoMatch";
@@ -44,12 +41,10 @@ const client = new ApolloClient({
 	cache: new InMemoryCache(),
 });
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
-
 function App() {
 	return (
 		<ApolloProvider client={client}>
-			<Elements stripe={stripePromise}>
+			
 				<Router>
 					<StoreProvider>
 						<Nav />
@@ -68,7 +63,7 @@ function App() {
 						</Flex>
 					</StoreProvider>
 				</Router>
-			</Elements>
+			
 		</ApolloProvider>
 	);
 }

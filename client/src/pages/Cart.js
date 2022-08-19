@@ -21,7 +21,7 @@ import {
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY}`);
 
 const Cart = () => {
 	const [state, dispatch] = useStoreContext();
